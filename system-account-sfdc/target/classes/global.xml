@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
+	<global-property name="mule.env" value="dev"
+		doc:name="Global Property" />
+
+	<configuration-properties file="common.properties"
+		doc:name="Configuration properties" doc:id="6a3b9e8e-cabc-4f17-ab54-a6e294340237" />
+	<configuration-properties file="mule.${mule.env}.properties"
+		doc:name="Configuration properties" doc:id="60cbaa4f-c93d-47a3-8fae-5ae187bf96b9" />
+
+	<db:config name="Database_Config" doc:id="78460c20-3a0d-4b8b-b87f-abf944062119" >
+		<db:generic-connection
+			url="jdbc:mysql://srinicapg:srinicapg@db4free.net:3306/srinicapg?useSSL=false"
+			driverClassName="com.mysql.cj.jdbc.Driver" />
+	</db:config>
+
+
+	<salesforce:sfdc-config name="Salesforce_Sfdc_config"
+		doc:name="Salesforce Sfdc config" doc:id="89528971-1ae5-4366-b550-61a21cacb14a">
+		<salesforce:basic-connection username="${sfdc.username}"
+			password="${sfdc.password}" securityToken="${sfdc.securityToken}" />
+	</salesforce:sfdc-config>
+
+</mule>

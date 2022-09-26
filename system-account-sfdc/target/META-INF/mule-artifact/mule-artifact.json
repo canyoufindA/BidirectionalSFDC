@@ -1,0 +1,45 @@
+{
+  "configs": [
+    "implementation.xml",
+    "account-system-api.xml",
+    "global.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "org.mule.templates:template-apiled-system-account-sfdc:2.1.2",
+  "minMuleVersion": "4.1.4",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "account-system-api.xml",
+        "api/account-system-api.raml",
+        "api/dataTypes/Account.raml",
+        "api/dataTypes/Address.raml",
+        "api/dataTypes/ErrorResponse.raml",
+        "api/dataTypes/SuccessResponse.raml",
+        "api/examples/get_accountById_example.yaml",
+        "api/examples/get_accounts_example.yaml",
+        "api/examples/post_account_example.yaml",
+        "api/examples/put_account_example.yaml",
+        "api/exchange.json",
+        "api/traits/trait-collection.raml",
+        "application-types.xml",
+        "common.properties",
+        "global/Commons.dwl",
+        "global.xml",
+        "implementation.xml",
+        "log4j2.xml",
+        "mule.dev.properties",
+        "mule.prod.properties",
+        "mule.qa.properties"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
