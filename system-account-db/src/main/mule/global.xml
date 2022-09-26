@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+    xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd 
+http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+    <global-property name="mule.env" value="dev" doc:name="Global Property" />
+    
+    <configuration-properties file="common.properties" doc:name="Configuration properties" doc:id="85973580-3944-475e-bb6e-dec19acc40f0" />
+    <configuration-properties file="mule.${mule.env}.properties" doc:name="Configuration properties" doc:id="8acec093-741a-4848-8759-4d6cf5fb5039" />
+	<db:config name="Database_Config" doc:name="Database Config" doc:id="a3e4d67f-3ec1-48fb-aef2-ae5e63e3d2ad" >
+		<db:my-sql-connection host="${db.host}" port="${db.port}" user="${db.user}" password="${db.password}" database="${db.name}" />
+	</db:config>
+
+</mule>
